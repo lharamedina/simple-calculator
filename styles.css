@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main-container {
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#calculator {
+    margin: auto;
+    max-width: 100%;
+    width: 500px;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2C3333;
+}
+
+/* Toggle Switch */
+
+#switch-container {}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #919191a0;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #F1F1F1;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #00ADB5;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #00ADB5;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Screen Display */
+
+#display-container {
+    margin: 32px 0;
+    box-sizing: border-box;
+}
+
+#display {
+    width: 500px;
+    text-align: end;
+    border: none;
+    border-radius: 10px;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #e2dcc8dd;
+    color: #2C3333;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Calculator Buttons */
+
+#btn-container {
+    width: 500px;
+    background-color: #E2DCC8dd;
+    border: none;
+    border-radius: 10px;
+    padding: 25px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    appearance: none;
+    background-color: #FCFCFD;
+    border: 2px solid #2C3333;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: #2C3333 0 -3px 0 inset;
+    color: #2C3333;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.7px;
+    text-transform: uppercase;
+    padding: 24px;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+}
+
+button:hover {
+    box-shadow: #2C3333 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+button:active {
+    box-shadow: #2C3333 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.functions {
+    color: #00ADB5;
+}
+
+.equal-sign {
+    grid-column: 3 / -1;
+}
+
+/* Dark Theme */
+
+body.dark {
+    background-color: #393E46;
+    color: #EEEEEE;
+}
+
+.dark h1 {
+    color: #EEEEEE;
+}
+
+/* Screen Display */
+.dark #display {
+    background-color: #222831;
+    color: #EEEEEE;
+}
+
+/* Calculator Buttons */
+.dark #btn-container {
+    background-color: #222831;
+}
+
+.dark button {
+    background-color: #FCFCFD;
+    border: 2px solid #D6D6E7;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    color: #222831;
+}
+
+.dark button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.dark button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+}
+
+.dark .functions {
+    color: #00ADB5;
+}
